@@ -26,10 +26,10 @@
                     <div class="single-widget">
                         <h3>Important Links</h3>
                         <ul>
-                            <li> <a href="index-2.html"> <i class="flaticon-right"></i> Home </a> </li>
-                            <li> <a href="about-us.html"> <i class="flaticon-right"></i> About Us</a> </li>
-                            <li> <a href="industries.html"> <i class="flaticon-right"></i> Industries </a> </li>
-                            <li> <a href="contact-us.html"> <i class="flaticon-right"></i> Contact Us </a> </li>
+                            <li> <a href="/"> <i class="flaticon-right"></i> Home </a> </li>
+                            <li> <a href="/about-us"> <i class="flaticon-right"></i> About Us</a> </li>
+                            <li> <a href="/industries"> <i class="flaticon-right"></i> Industries </a> </li>
+                            <li> <a href="/contact-us"> <i class="flaticon-right"></i> Contact Us </a> </li>
                         </ul>
                     </div>
                 </div>
@@ -37,14 +37,14 @@
                     <div class="single-widget">
                         <h3>Service</h3>
                         <ul>
-                            <li> <a href="remarketing.html"><i class="flaticon-right"></i> IT Re-Marketing</a> </li>
-                            <li> <a href="re-manufacturer.html"><i class="flaticon-right"></i> IT Re-Manufacturer </a>
+                            <li> <a href="/remarketing"><i class="flaticon-right"></i> IT Re-Marketing</a> </li>
+                            <li> <a href="/re-manufacturer"><i class="flaticon-right"></i> IT Re-Manufacturer </a>
                             </li>
-                            <li> <a href="it-disposition.html"><i class="flaticon-right"></i> IT Asset Disposition</a>
+                            <li> <a href="/it-disposition"><i class="flaticon-right"></i> IT Asset Disposition</a>
                             </li>
-                            <li><a href="data-destruction.html"><i class="flaticon-right"></i> IT Data Destruction</a>
+                            <li><a href="/data-destruction"><i class="flaticon-right"></i> IT Data Destruction</a>
                             </li>
-                            <li> <a href="end-of-life-cycle-processing.html"><i class="flaticon-right"></i> End Of Life
+                            <li> <a href="/end-of-life-cycle-processing"><i class="flaticon-right"></i> End Of Life
                                     Cycle
                                     Processing</a> </li>
                         </ul>
@@ -58,7 +58,7 @@
                                 suite T 200,
                                 Chamblee, GA 30341,
                                 United States</li>
-                            
+
                             <li> <i class="flaticon-envelope"></i> <span>Email:</span> <a
                                     href="mailto:helpdesk@b2bexportsllc.com">
                                     helpdesk@b2bexportsllc.com</a> </li>

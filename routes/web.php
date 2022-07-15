@@ -14,5 +14,32 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.front');
+    return view('front.home');
+});
+Route::get('about-us', function () {
+    return view('front.about-us');
+});
+Route::get('industries', function () {
+    return view('front.industries');
+});
+Route::get('contact-us', function () {
+    return view('front.contact-us');
+});
+Route::get('data-destruction', function () {
+    return view('front.data-destruction');
+});
+Route::get('end-of-life-cycle-processing', function () {
+    return view('front.end-of-life-cycle-processing');
+});
+Route::get('it-asset-remarketing', function () {
+    return view('front.it-asset-remarketing');
+});
+Route::get('it-disposition', function () {
+    return view('front.it-disposition');
+});
+Route::get('re-manufacturer', function () {
+    return view('front.re-manufacturer');
+});
+Route::get('remarketing', function () {
+    return view('front.remarketing');
 });

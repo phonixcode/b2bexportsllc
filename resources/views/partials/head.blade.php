@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Used Laptop wholesale Dealers in USA - IT Asset Services Destruction</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="front/img/favicon.ico">
     <!-- Bootstrap Min CSS -->
     <link rel="stylesheet" href="front/css/bootstrap.min.css">
     <!-- Owl Theme Default Min CSS -->

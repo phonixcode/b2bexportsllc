@@ -22,7 +22,7 @@
             <div class="navbar-area">
 
                 <!-- Menu For Mobile Device -->
-                <div class="mobile-nav"> <a href="index-2.html" class="logo"> <img src="front/img/logo.png" alt="Logo">
+                <div class="mobile-nav"> <a href="/" class="logo"> <img src="front/img/logo.png" alt="Logo">
                     </a>
                 </div>
 

@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <a href="https://api.whatsapp.com/send?phone=2522660299" id="whatsapp"
+    <a href="https://api.whatsapp.com/send?phone=12098817868" id="whatsapp"
         class="bx bxl-whatsapp text-theme-colored font-36 mt-5 sm-display-block"
         style="padding-top: 7px; color:#ffffff!important;" rel="nofollow" target="_blank">
     </a>

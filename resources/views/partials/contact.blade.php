@@ -9,8 +9,7 @@
                                 target="_blank"><i class="flaticon-maps-and-flags"></i> US Office: <span>5317
                                     Peachtree Blvd suite T
                                     200, Chamblee, GA 30341, United States</span> </a></li>
-                        <li> <i class="flaticon-call"></i> US No. : <a href="tel:+1 404 551 3000"> +1 404 551
-                                3000</a> </li>
+                        <li> <i class="flaticon-call"></i> US No. : <a href="tel:(252) 266-0299"> (252) 266-0299</a> </li>
 
                         <li> <i class="flaticon-envelope"></i> Email Us: <a
                                 href="mailto:helpdesk@b2bexportsllc.com">

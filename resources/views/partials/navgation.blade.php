@@ -29,7 +29,7 @@
                 <!-- Menu For Desktop Device -->
                 <div class="main-nav">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <div class="container"> <a class="navbar-brand" href="index-2.html"> <img
+                        <div class="container"> <a class="navbar-brand" href="/"> <img
                                     src="front/img/logo.png" alt="Logo"> </a>
                             <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                                 <ul class="navbar-nav m-auto">

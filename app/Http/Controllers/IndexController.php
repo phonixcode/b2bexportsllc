@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function home()
     {
-        return view('front.home');
+        $banners = Banner::where('status', 'active')->get();
+        return view('front.home', compact('banners'));
     }
 
     public function about_us()

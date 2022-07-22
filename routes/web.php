@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\Back\AuthController;
-use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Back\AuthController;
+use App\Http\Controllers\Back\BannerController;
+use App\Http\Controllers\Back\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,9 @@ Route::prefix('admin')->group(function () {
             return view('back.dashboard');
         })->name('admin.dashboard');
 
+
+        Route::resource('banners', BannerController::class);
+        Route::resource('services', ServiceController::class);
         Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     });
 });

@@ -4,15 +4,17 @@
 
 @section('content')
 <!-- Start Banner Area -->
+@if (count($banners) != 0)
 <section class="main-slider-area owl-theme owl-carousel">
-    <div class="slider-item bg-1">
+    @foreach ($banners as $item)
+    <div class="slider-item" style="background-image: url('{{ $item->image }}')">
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-8">
                             <div class="slider-text one overflow-hidden">
-                                <h1>IT ASSET DISPOSITION. COMPLETELY</h1>
+                                <h1>{{ $item->title }}</h1>
                                 <div class="slider-btn"> <a href="/contact-us" class="default-btn"> Contact Us
                                     </a>
                                 </div>
@@ -23,26 +25,9 @@
             </div>
         </div>
     </div>
-    <div class="slider-item bg-2">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-8">
-                            <div class="slider-text two overflow-hidden">
-                                <h1>
-                                    Be Free of Used IT Without Lifting a Finger
-                                </h1>
-                                <div class="slider-btn"> <a href="/contact-us" class="default-btn"> Contact Us
-                                    </a> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @endforeach
 </section>
+@endif
 <!-- End Banner Area -->
 
 <!-- Start Facility Area -->

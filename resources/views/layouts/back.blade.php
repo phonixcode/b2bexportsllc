@@ -9,18 +9,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="format-detection" content="telephone=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- PAGE TITLE HERE -->
 	<title>b2bexportsllc Admin Dashboard</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/x-icon" href="front/img/favicon.ico">
-	<link rel="stylesheet" href="back/vendor/jquery-nice-select/css/nice-select.css">
-	<link rel="stylesheet" href="back/vendor/owl-carousel/owl.carousel.css">
-	<link rel="stylesheet" href="back/vendor/nouislider/nouislider.min.css">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/img/favicon.ico') }}">
+    <!-- Datatable -->
+    <link rel="stylesheet" href="{{ asset('back/vendor/datatables/css/jquery.dataTables.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('back/vendor/jquery-nice-select/css/nice-select.css') }}">
+	<link rel="stylesheet" href="{{ asset('back/vendor/owl-carousel/owl.carousel.css') }}">
+	<link rel="stylesheet" href="{{ asset('back/vendor/nouislider/nouislider.min.css') }}">
 
 	<!-- Style css -->
-    <link href="back/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('back/css/style.css') }}">
+    @stack('css')
 
 </head>
 <body>
@@ -76,9 +80,9 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-							<div class="dashboard_bar">
+							{{-- <div class="dashboard_bar">
                                 Dashboard
-                            </div>
+                            </div> --}}
                         </div>
                         <ul class="navbar-nav header-right">
 							<li class="nav-item dropdown notification_dropdown">
@@ -167,7 +171,7 @@
 
 							<li class="nav-item dropdown  header-profile">
 								<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-									<img src="back/images/user.jpg" width="56" alt=""/>
+									<img src="{{ asset('back/images/user.jpg') }}" width="56" alt=""/>
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
 									<a href="javascript:void(0);" class="dropdown-item ai-icon">
@@ -201,30 +205,30 @@
             <div class="dlabnav-scroll">
 				<ul class="metismenu" id="menu">
                     <li>
-                        <a class="" href="javascript:void()" aria-expanded="false">
+                        <a class="" href="{{ route('admin.dashboard') }}" aria-expanded="false">
 							<i class="fas fa-home"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
                     </li>
 
                     <li>
-                        <a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                        <a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 						<i class="fas fa-info-circle"></i>
 							<span class="nav-text">Banner Mgt</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="">Create Banner</a></li>
-							<li><a href="">List Banner</a></li>
+                            <li><a href="{{ route('banners.create') }}">Create Banner</a></li>
+							<li><a href="{{ route('banners.index') }}">List Banner</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                        <a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 						<i class="fas fa-info-circle"></i>
 							<span class="nav-text">Services Mgt</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="">Create Service</a></li>
-							<li><a href="">List Service</a></li>
+                            <li><a href="{{ route('services.create') }}">Create Service</a></li>
+							<li><a href="{{ route('services.index') }}">List Service</a></li>
                         </ul>
                     </li>
                     <li>
@@ -242,7 +246,7 @@
                     <li>
                         <a class="" href="javascript:void()" aria-expanded="false">
 						<i class="fas fa-info-circle"></i>
-							<span class="nav-text">Settings</span>
+							<span class="nav-text">Site Settings</span>
 						</a>
                     </li>
 
@@ -260,8 +264,6 @@
         <!--**********************************
             Content body end
         ***********************************-->
-
-
 
 
         <!--**********************************
@@ -284,25 +286,30 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="back/vendor/global/global.min.js"></script>
-	<script src="back/vendor/chart.js/Chart.bundle.min.js"></script>
-	<script src="back/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="{{ asset('back/vendor/global/global.min.js') }}"></script>
+	<script src="{{ asset('back/vendor/chart.js/Chart.bundle.min.js') }}"></script>
 
 	<!-- Apex Chart -->
-	<script src="back/vendor/apexchart/apexchart.js"></script>
+	<script src="{{ asset('back/vendor/apexchart/apexchart.js') }}"></script>
 
-	<script src="back/vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="{{ asset('back/vendor/chart.js/Chart.bundle.min.js') }}"></script>
+
+    <!-- Datatable -->
+    <script src="{{ asset('back/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('back/js/plugins-init/datatables.init.js') }}"></script>
 
 	<!-- Chart piety plugin files -->
-    <script src="back/vendor/peity/jquery.peity.min.js"></script>
+    <script src="{{ asset('back/vendor/peity/jquery.peity.min.js') }}"></script>
 	<!-- Dashboard 1 -->
-	<script src="back/js/dashboard/dashboard-1.js"></script>
+	<script src="{{ asset('back/js/dashboard/dashboard-1.js') }}"></script>
 
-	<script src="back/vendor/owl-carousel/owl.carousel.js"></script>
+	<script src="{{ asset('back/vendor/owl-carousel/owl.carousel.js') }}"></script>
 
-    <script src="back/js/custom.min.js"></script>
-	<script src="back/js/dlabnav-init.js"></script>
-	<script src="back/js/demo.js"></script>
+    <script src="{{ asset('back/vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
+
+    <script src="{{ asset('back/js/custom.min.js') }}"></script>
+	<script src="{{ asset('back/js/dlabnav-init.js') }}"></script>
+	<script src="{{ asset('back/js/demo.js') }}"></script>
     {{-- <script src="back/js/styleSwitcher.js"></script> --}}
 	<script>
         function cardsCenter() {
@@ -355,6 +362,8 @@
             }, 1500)
         });
     </script>
+
+    @stack('js')
 
 </body>
 </html>

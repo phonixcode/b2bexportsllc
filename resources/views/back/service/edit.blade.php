@@ -9,14 +9,14 @@
             <div class="col-xl-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Create Service</h4>
+                        <h4 class="card-title">Edit Service</h4>
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
                             <form action="{{ route('services.update', $service->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
-                                
+
                                 @include('partials.alert')
                                 <div class="mb-3">
                                     <label for="">Service Title</label>

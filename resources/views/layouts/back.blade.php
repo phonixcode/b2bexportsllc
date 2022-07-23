@@ -227,6 +227,16 @@
                         </ul>
                     </li>
                     <li>
+                        <a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+						<i class="fas fa-info-circle"></i>
+							<span class="nav-text">Industries Mgt</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('industries.create') }}">Create Industry</a></li>
+							<li><a href="{{ route('industries.index') }}">List Industry</a></li>
+                        </ul>
+                    </li>
+                    <li>
                         <a class="" href="javascript:void()" aria-expanded="false">
 						<i class="fas fa-info-circle"></i>
 							<span class="nav-text">Contact Mail</span>

@@ -9,32 +9,28 @@
             <div class="col-xl-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Create Service</h4>
+                        <h4 class="card-title">Create Facility</h4>
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
-                            <form action="{{ route('services.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('industries.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @include('partials.alert')
                                 <div class="mb-3">
-                                    <label for="">Service Title</label>
-                                    <input type="text" class="form-control input-default " placeholder="service title" name="title">
+                                    <label for="">Title</label>
+                                    <input type="text" class="form-control input-default " placeholder="" name="title">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="">Service Image</label>
+                                    <label for="">Sub Title</label>
+                                    <textarea class="form-control" rows="30" id="" name="sub_title" placeholder=""></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Image</label>
                                     <input type="file" class="form-control input-default " placeholder="" name="photo">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="">Service Summary</label>
-                                    <textarea class="form-control" rows="30" id="summary" name="summary" placeholder="service summary"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="">Service Description</label>
-                                    <textarea class="form-control" rows="30" id="description" name="description" placeholder="service description"></textarea>
-                                    <script src="{{ asset('back/js/ckeditor/ckeditor.js') }}"></script>
-                                    <script>
-                                        CKEDITOR.replace('description');
-                                    </script>
+                                    <label for="">Informations</label>
+                                    <textarea class="form-control" style="height: 150px;" rows="30" id="information" name="information" placeholder=""></textarea>
                                 </div>
 
                                 <div class="mb-3">

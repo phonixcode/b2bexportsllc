@@ -43,6 +43,7 @@
 </section>
 <!-- End About Area -->
 
+@if (count($facilities) != 0)
 <section class="about-section facility-area-three ">
     <div class="container">
         <div class="row">
@@ -54,36 +55,18 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($facilities as $item)
             <div class="col-lg-3 col-sm-6 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-                <div class="single-facility"> <img src="front/img/no-landfills-rule.png" alt="Image">
-                    <h3>No Landfilling</h3>
-                    <p>Our electronic waste solutions include re-use or recycling of the equipment or components.</p>
+                <div class="single-facility"> <img src="{{ $item->photo }}" alt="Image">
+                    <h3>{{ $item->title }}</h3>
+                    <p>{{ $item->description }}</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-                <div class="single-facility"> <img src="front/img/environment-friendly.png" alt="Image">
-                    <h3>Sustainable and Environment-friendly</h3>
-                    <p>We help you reduce pollution and harm to the environment by carefully recycling or reusing the
-                        equipment and components.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                <div class="single-facility"> <img src="front/img/simple-and-easy.png" alt="Image">
-                    <h3>Easy Services</h3>
-                    <p>We offer you pick up services for electronics recycling and transport your equipment with care.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                <div class="single-facility"> <img src="front/img/recovery.png" alt="Image">
-                    <h3>Value Recovery</h3>
-                    <p>The environmentally-focused way we redirect the assets to their greatest functional and
-                        commercial purpose.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
+@endif
 
 <!-- Start About Area -->
 <section class="about-area-two pt-70 pb-70">
@@ -94,13 +77,7 @@
                     <img src="front/img/vision.png">
                     <h2>Our Mission</h2>
 
-                    <p>Our circular business model based on the ethos of ethics, sustainability, and social
-                        responsibility towards the earth is focused on aiding businesses to adapt a more environment
-                        friendly alternatives and provide them with services that not only superior in quality but also
-                        leaves a positive impact on the society. Our aim is to ensure that all businesses achieve their
-                        goal of sustainability and leave as little carbon footprint as possible.
-
-                    </p>
+                    <p>{{ $settings->site_mission }}</p>
                 </div>
             </div>
             <div class="col-lg-6 pl-0 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
@@ -108,13 +85,12 @@
                     <img src="front/img/mision.png">
                     <h2>Our Vision</h2>
 
-                    <p>Our vision is to aid every business in achieving minimum carbon footprint. We strongly believe IT
-                        waste should not cost the environment and therefore strive to provide best IT asset disposition
-                        services to all our clients around the world. </p>
+                    <p>{{ $settings->site_vision }}</p>
                 </div>
             </div>
 
-            <div class="col-lg-12 pt-70 pb-40 wow fadeInLeft" style="visibility:visible; animation-name:fadeInLeft;">
+            {{-- <div class="col-lg-12 pt-70 pb-40 wow fadeInLeft"
+                style="visibility:visible; animation-name:fadeInLeft;">
 
                 <p>B2B Exports LLC handles your equipment and components with care. We understand your need to stay safe
                     and secure, which is why we also offer Data Destruction services once we have acquired your
@@ -129,7 +105,7 @@
                     on any device. Once you are done using the components that store data, and such data is not to be
                     used later on, give us a call, we will provide data shredding services.</p>
 
-            </div>
+            </div> --}}
 
 
         </div>
@@ -142,9 +118,6 @@
 <section class="about-area-two pt-70 pb-70">
     <div class="container">
         <div class="row">
-
-
-
 
             <div class="image-column col-lg-4 md-mb-50 wow fadeInLeft"
                 style="visibility: visible; animation-name: fadeInLeft;">
@@ -186,11 +159,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </div>
     </div>
     </div>

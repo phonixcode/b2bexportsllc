@@ -7,6 +7,7 @@ use App\Http\Controllers\Back\BannerController;
 use App\Http\Controllers\Back\ServiceController;
 use App\Http\Controllers\Back\SettingController;
 use App\Http\Controllers\Back\FacilityController;
+use App\Http\Controllers\Back\IndustriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('banners', BannerController::class);
         Route::resource('services', ServiceController::class);
         Route::resource('facilities', FacilityController::class);
+        Route::resource('industries', IndustriesController::class);
 
         Route::get('settings', [SettingController::class, 'settings'])->name('settings');
         Route::put('settings', [SettingController::class, 'updateSettings'])->name('settings.update');

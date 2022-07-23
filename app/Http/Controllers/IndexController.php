@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Service;
+use App\Models\Facility;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -10,7 +12,9 @@ class IndexController extends Controller
     public function home()
     {
         $banners = Banner::where('status', 'active')->get();
-        return view('front.home', compact('banners'));
+        $facilities = Facility::where('status', 'active')->get();
+        $services = Service::where('status', 'active')->take(4)->get();
+        return view('front.home', compact('banners', 'facilities', 'services'));
     }
 
     public function about_us()
@@ -28,33 +32,12 @@ class IndexController extends Controller
         return view('front.contact-us');
     }
 
-    public function data_destruction()
+    public function viewPage($page_slug)
     {
-        return view('front.data-destruction');
-    }
+        $page = Service::viewPage($page_slug);
 
-    public function end_of_life_cycle_processing()
-    {
-        return view('front.end-of-life-cycle-processing');
-    }
-
-    public function it_asset_remarketing()
-    {
-        return view('front.it-asset-remarketing');
-    }
-
-    public function it_disposition()
-    {
-        return view('front.it-disposition');
-    }
-
-    public function re_manufacturer()
-    {
-        return view('front.re-manufacturer');
-    }
-
-    public function remarketing()
-    {
-        return view('front.remarketing');
+        return (count($page) != 0)
+        ? view('front.page', compact('page'))
+        : view('errors.404');
     }
 }

@@ -50,18 +50,11 @@
                                     <li class="nav-item {{ (request()->is('re-manufacturer') || request()->is('remarketing') || request()->is('it-disposition') || request()->is('re-manufacturer') || request()->is('data-destruction') || request()->is('end-of-life-cycle-processing')) ? 'active' : '' }}"> <a href="javascript:void(0);" class="nav-link dropdown-toggle"> Services <i
                                                 class="bx bx-plus"></i> </a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item"> <a href="/re-manufacturer" class="nav-link">IT
-                                                    Re-Manufacturer</a> </li>
-                                            <li class="nav-item"> <a href="/remarketing" class="nav-link">IT
-                                                    Re-Marketing</a> </li>
-                                            <li class="nav-item"> <a href="/it-disposition" class="nav-link">IT
-                                                    Asset Disposition</a>
+                                            @foreach (\App\Models\Service::where('status', 'active')->get() as $item)
+                                            <li class="nav-item">
+                                                <a href="{{ $item->slug }}" class="nav-link">{{ $item->title }}</a>
                                             </li>
-                                            <li class="nav-item"><a href="/data-destruction" class="nav-link">IT
-                                                    Data Destruction</a></li>
-                                            <li class="nav-item"> <a href="/end-of-life-cycle-processing"
-                                                    class="nav-link">End Of Life
-                                                    Cycle Processing</a> </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="nav-item">

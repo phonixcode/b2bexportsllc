@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Back\AuthController;
 use App\Http\Controllers\Back\BannerController;
+use App\Http\Controllers\Back\FacilityController;
 use App\Http\Controllers\Back\ServiceController;
 
 /*
@@ -21,12 +22,6 @@ Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('about-us', [IndexController::class, 'about_us'])->name('about-us');
 Route::get('industries', [IndexController::class, 'industries'])->name('industries');
 Route::get('contact-us', [IndexController::class, 'contact_us'])->name('contact');
-Route::get('data-destruction', [IndexController::class, 'data_destruction'])->name('data-destruction');
-Route::get('end-of-life-cycle-processing', [IndexController::class, 'end_of_life_cycle_processing']);
-Route::get('it-asset-remarketing', [IndexController::class, 'it_asset_remarketing']);
-Route::get('it-disposition', [IndexController::class, 'it_disposition']);
-Route::get('re-manufacturer', [IndexController::class, 're_manufacturer']);
-Route::get('remarketing', [IndexController::class, 'remarketing']);
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['guest', 'prevent.back.history'])->group(function () {
@@ -42,6 +37,9 @@ Route::prefix('admin')->group(function () {
 
         Route::resource('banners', BannerController::class);
         Route::resource('services', ServiceController::class);
+        Route::resource('facilities', FacilityController::class);
         Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     });
 });
+
+Route::get('/{page_slug}', [IndexController::class, 'viewPage'])->name('view.page');

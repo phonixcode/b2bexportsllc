@@ -25,7 +25,7 @@
                                 <div class="mb-3">
                                     <label for="">Banner Image</label>
                                     <input type="file" class="form-control input-default " placeholder="" name="image">
-                                    <img width="200" class="mt-4" src="{{ $banner->image }}"
+                                    <img width="100" class="mt-4" src="{{ $banner->image }}"
                                     alt="custom-image">
                                 </div>
                                 <div class="mb-3">

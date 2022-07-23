@@ -224,6 +224,16 @@
                     <li>
                         <a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 						<i class="fas fa-info-circle"></i>
+							<span class="nav-text">Facility Mgt</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('facilities.create') }}">Create Facility</a></li>
+							<li><a href="{{ route('facilities.index') }}">List Facility</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+						<i class="fas fa-info-circle"></i>
 							<span class="nav-text">Services Mgt</span>
 						</a>
                         <ul aria-expanded="false">

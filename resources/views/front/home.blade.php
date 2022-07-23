@@ -31,48 +31,23 @@
 <!-- End Banner Area -->
 
 <!-- Start Facility Area -->
+@if (count($facilities) != 0)
 <section class="facility-area facility-area-three pt-50 pb-50 about-bg">
     <div class="container">
         <div class="row">
+            @foreach ($facilities as $item)
             <div class="col-lg-3 col-sm-6 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-                <div class="single-facility"> <img src="front/img/no-landfills-rule.png" alt="Image">
-                    <h3>No Landfilling</h3>
-                    <p>Our electronic waste solutions include re-use or recycling of the equipment or components.
-                    </p>
+                <div class="single-facility"> <img src="{{ $item->photo }}" alt="Image">
+                    <h3>{{ $item->title }}</h3>
+                    <p>{{ $item->description }}</p>
                     <a href="/about-us"> <i class="flaticon-right-1"></i> </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-                <div class="single-facility"> <img src="front/img/environment-friendly.png" alt="Image">
-                    <h3>Sustainable and Environment-friendly</h3>
-                    <p>We help you reduce pollution and harm to the environment by carefully recycling or reusing
-                        the equipment
-                        and components.</p>
-                    <a href="/about-us"> <i class="flaticon-right-1"></i> </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInRight"
-                style="visibility: visible; animation-name: fadeInRight;">
-                <div class="single-facility"> <img src="front/img/simple-and-easy.png" alt="Image">
-                    <h3>Easy Services</h3>
-                    <p>We offer you pick up services for electronics recycling and transport your equipment with
-                        care.</p>
-                    <a href="/about-us"> <i class="flaticon-right-1"></i> </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInRight"
-                style="visibility: visible; animation-name: fadeInRight;">
-                <div class="single-facility"> <img src="front/img/recovery.png" alt="Image">
-                    <h3>Value Recovery</h3>
-                    <p>The environmentally-focused way we redirect the front to their greatest functional and
-                        commercial
-                        purpose.</p>
-                    <a href="/about-us.html"> <i class="flaticon-right-1"></i> </a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
+@endif
 <!-- End Facility Area -->
 
 <!-- Start About Area -->
@@ -108,69 +83,33 @@
 </section>
 <!-- End About Area -->
 
+@if (count($services) != 0)
 <section class="repair-area pt-70 pb-70 jarallax">
     <div class="container">
         <div class="section-title white-title">
-            <!-- <span>What We Do</span> -->
             <h2>Our Services For You</h2>
         </div>
         <div class="row">
+            @foreach ($services as $item)
             <div class="col-lg-3 col-md-6">
-                <div class="single-news"> <a href="/it-asset-remarketing"> <img src="front/img/1.jpg"
-                            alt="Image"> </a>
-                    <div class="news-content"> <a href="/it-asset-remarketing">
-                            <h3>IT Re-Marketing</h3>
-                        </a>
-                        <p>IT asset (or IT equipment) re-marketing takes electronic devices that are no longer used,
-                            such as
-                            tablets, computers, or other valuable items, </p>
-                        <a href="/it-asset-remarketing" class="read-more"> Read More <i class="bx bx-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-news"> <a href="/re-manufacturer"> <img src="front/img/3.jpg" alt="Image">
+                <div class="single-news">
+                    <a href="{{ $item->slug }}">
+                        <img src="{{ $item->photo }}" alt="Image">
                     </a>
-                    <div class="news-content"> <a href="/re-manufacturer">
-                            <h3>IT Re-Manufacturer</h3>
+                    <div class="news-content"> <a href="{{ $item->slug }}">
+                            <h3>{{ $item->title }}</h3>
                         </a>
-                        <p>IT Asset Re-manufacturer to any activity carried to re-manufacture an Asset to restore
-                            full
-                            functionality with an intense focus on the performance and reliability...</p>
-                        <a href="/re-manufacturer" class="read-more"> Read More <i class="bx bx-plus"></i> </a>
+                        <p>{{ mb_substr($item->summary, 0, 150, 'utf-8') }}...</p>
+                        <a href="{{ $item->slug }}" class="read-more"> Read More <i class="bx bx-plus"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-news"> <a href="/it-disposition"> <img src="front/img/2.jpg" alt="Image">
-                    </a>
-                    <div class="news-content"> <a href="/it-disposition">
-                            <h3>IT Asset Disposition</h3>
-                        </a>
-                        <p>IT Asset Disposition (usually referred to as “ITAD”) is the practice of properly
-                            decommissioning and
-                            disposing the hardware and electronic devices. IT Asset... </p>
-                        <a href="/it-disposition" class="read-more"> Read More <i class="bx bx-plus"></i> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-news"> <a href="/data-destruction"> <img src="front/img/4.jpg" alt="Image">
-                    </a>
-                    <div class="news-content"> <a href="/data-destruction">
-                            <h3>IT Data Destructiond</h3>
-                        </a>
-                        <p>B2B Exports LLC helps you to find security even after your IT front have been
-                            disposed of. We employ effective methods to erase all of your data
-                            from the recovered ...</p>
-                        <a href="/data-destruction" class="read-more"> Read More <i class="bx bx-plus"></i> </a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
+@endif
 
 <section class="computer-area pt-70 pb-70">
     <div class="container">

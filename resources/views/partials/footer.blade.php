@@ -37,16 +37,9 @@
                     <div class="single-widget">
                         <h3>Service</h3>
                         <ul>
-                            <li> <a href="/remarketing"><i class="flaticon-right"></i> IT Re-Marketing</a> </li>
-                            <li> <a href="/re-manufacturer"><i class="flaticon-right"></i> IT Re-Manufacturer </a>
-                            </li>
-                            <li> <a href="/it-disposition"><i class="flaticon-right"></i> IT Asset Disposition</a>
-                            </li>
-                            <li><a href="/data-destruction"><i class="flaticon-right"></i> IT Data Destruction</a>
-                            </li>
-                            <li> <a href="/end-of-life-cycle-processing"><i class="flaticon-right"></i> End Of Life
-                                    Cycle
-                                    Processing</a> </li>
+                            @foreach (\App\Models\Service::where('status', 'active')->get() as $item)
+                            <li> <a href="{{ $item->slug }}"><i class="flaticon-right"></i> {{ $item->title }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -75,7 +68,7 @@
     <footer class="footer-bottom-area footer-bottom-electronics-area">
         <div class="container">
             <div class="copy-right">
-                <p> Copyright <i class="bx bx-copyright"></i>2022 B2B Exports LLC | All Rights Reserved.</p>
+                <p> Copyright <i class="bx bx-copyright"></i>{{ Date('Y') }} B2B Exports LLC | All Rights Reserved.</p>
                 <p> <a href="https://www.akswebsoft.com/" title="AKS Websoft Consulting Pvt. Ltd." target="_blank"><img
                             src="front/img/aks.png" alt="AKS Websoft Consulting Pvt. Ltd."></a> </p>
             </div>

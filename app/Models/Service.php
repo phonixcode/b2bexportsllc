@@ -10,4 +10,8 @@ class Service extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public static function viewPage($page_slug){
+        return self::where('slug', $page_slug)->get();
+    }
 }

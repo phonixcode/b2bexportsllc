@@ -5,18 +5,16 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-widget">
                         <h3>About Info</h3>
-                        <p>We, B2B Exports LLC, are an IT Asset Life Cycle Management company. Our wide range of
-                            services is focused
-                            around helping in augmenting the IT asset sustainability.</p>
+                        <p>{{ $settings->about_us_summary }}</p>
                         <div class="social-area">
                             <ul>
-                                <li> <a href="" target="_blank"><i
+                                <li> <a href="{{ $settings->facebook_url }}" target="_blank"><i
                                             class="bx bxl-facebook"></i></a> </li>
-                                <li> <a href=""
+                                <li> <a href="{{ $settings->linkedin_url }}"
                                         target="_blank"><i class="bx bxl-linkedin"></i></a> </li>
-                                <li> <a href="" target="_blank"><i
+                                <li> <a href="{{ $settings->instagram_url }}" target="_blank"><i
                                             class="bx bxl-instagram"></i></a> </li>
-                                <li> <a href=""
+                                <li> <a href="{{ $settings->youtube_url }}"
                                         target="_blank"><i class="bx bxl-youtube"></i></a> </li>
                             </ul>
                         </div>
@@ -47,15 +45,12 @@
                     <div class="single-widget contact">
                         <h3>Contact Us</h3>
                         <ul>
-                            <li> <i class="flaticon-maps-and-flags"></i> <span>US Office:</span> 5317 Peachtree Blvd
-                                suite T 200,
-                                Chamblee, GA 30341,
-                                United States</li>
+                            <li> <i class="flaticon-maps-and-flags"></i> <span>US Office:</span> {{ $settings->site_address }}</li>
 
                             <li> <i class="flaticon-envelope"></i> <span>Email:</span> <a
-                                    href="mailto:helpdesk@b2bexportsllc.com">
-                                    helpdesk@b2bexportsllc.com</a> </li>
-                            <li> <i class="flaticon-call"></i> <span>Hotline:</span> <a href="tel:(252) 266-0299"> (252) 266-0299</a> </li>
+                                    href="mailto:{{ $settings->site_email }}">
+                                    {{ $settings->site_email }}</a> </li>
+                            <li> <i class="flaticon-call"></i> <span>Hotline:</span> <a href="tel:{{ $settings->site_phone_number }}"> {{ $settings->site_phone_number }}</a> </li>
                         </ul>
                     </div>
                 </div>
@@ -68,9 +63,8 @@
     <footer class="footer-bottom-area footer-bottom-electronics-area">
         <div class="container">
             <div class="copy-right">
-                <p> Copyright <i class="bx bx-copyright"></i>{{ Date('Y') }} B2B Exports LLC | All Rights Reserved.</p>
-                <p> <a href="https://www.akswebsoft.com/" title="AKS Websoft Consulting Pvt. Ltd." target="_blank"><img
-                            src="front/img/aks.png" alt="AKS Websoft Consulting Pvt. Ltd."></a> </p>
+                <p> Copyright <i class="bx bx-copyright"></i>{{ Date('Y') }} {{ $settings->site_title }} | All Rights Reserved.</p>
+
             </div>
         </div>
     </footer>

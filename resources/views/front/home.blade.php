@@ -58,21 +58,7 @@
                 style="visibility: visible; animation-name: fadeInLeft;">
                 <div class="about-content">
                     <h2>About B2B Exports LLC</h2>
-                    <p>We, B2B Exports LLC, are an IT Asset Life Cycle Management company. Our wide range of
-                        services is focused
-                        around helping in augmenting the IT asset sustainability.</p>
-                    <p>At B2B Exports LLC, we are staunch believers in saving the environment by helping various
-                        corporations,
-                        people and industries to take care of your obsolete IT equipment and goods. Our services
-                        include the
-                        services of IT asset recovery services, data shredding services, and many other IT front
-                        services to
-                        dispose of and recycle the equipment that is no longer used or in use.</p>
-                    <p> We help you recycle and get rid of old computers, computer components, flash drives, hard
-                        disks, cell
-                        phones, printers, CDs and much more. Our services also include the valuation of the
-                        equipment and
-                        components that you give to us, which helps you recover your operational costs. </p>
+                    <p>{!! $settings->about_us_desc !!}</p>
                     <a href="/about-us" class="default-btn"> Read More </a>
                 </div>
             </div>

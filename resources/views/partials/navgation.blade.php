@@ -7,10 +7,10 @@
                     </div>
                     <div class="col-lg-6">
                         <ul class="header-content-right">
-                            <li> <a href="mailto:helpdesk@b2bexportsllc.com"><i class="bx bx-envelope"></i>
-                                    helpdesk@b2bexportsllc.com
+                            <li> <a href="mailto:{{ $settings->site_email }}"><i class="bx bx-envelope"></i>
+                                {{ $settings->site_email }}
                                 </a> </li>
-                            <li> <a href="tel:(252) 266-0299"> <i class="bx bx-phone-call"></i> (252) 266-0299 </a>
+                            <li> <a href="tel:{{ $settings->site_phone_number }}"> <i class="bx bx-phone-call"></i> {{ $settings->site_phone_number }} </a>
                             </li>
                         </ul>
                     </div>
@@ -22,7 +22,7 @@
             <div class="navbar-area">
 
                 <!-- Menu For Mobile Device -->
-                <div class="mobile-nav"> <a href="/" class="logo"> <img src="front/img/logo.png" alt="Logo">
+                <div class="mobile-nav"> <a href="/" class="logo"> <img src="{{ $settings->site_logo }}" alt="Logo">
                     </a>
                 </div>
 
@@ -30,7 +30,7 @@
                 <div class="main-nav">
                     <nav class="navbar navbar-expand-md navbar-light">
                         <div class="container"> <a class="navbar-brand" href="/"> <img
-                                    src="front/img/logo.png" alt="Logo"> </a>
+                                    src="{{ $settings->site_logo }}" alt="Logo"> </a>
                             <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                                 <ul class="navbar-nav m-auto">
                                     <li class="nav-item">

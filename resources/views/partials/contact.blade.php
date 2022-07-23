@@ -5,15 +5,13 @@
                 <div class="quick-contact">
                     <h3>Quick Contact </h3>
                     <ul>
-                        <li> <a href="https://www.google.com/maps?cid=11984670918588847903&amp;_ga=2.35626913.1412661700.1656433910-30058620.1651852186"
-                                target="_blank"><i class="flaticon-maps-and-flags"></i> US Office: <span>5317
-                                    Peachtree Blvd suite T
-                                    200, Chamblee, GA 30341, United States</span> </a></li>
-                        <li> <i class="flaticon-call"></i> US No. : <a href="tel:(252) 266-0299"> (252) 266-0299</a> </li>
+                        <li> <a href="javascript:void(0)">
+                            <i class="flaticon-maps-and-flags"></i> US Office: <span>{{ $settings->site_address }}</span> </a></li>
+                        <li> <i class="flaticon-call"></i> US No. : <a href="tel:{{ $settings->site_phone_number }}"> {{ $settings->site_phone_number }}</a> </li>
 
                         <li> <i class="flaticon-envelope"></i> Email Us: <a
-                                href="mailto:helpdesk@b2bexportsllc.com">
-                                helpdesk@b2bexportsllc.com </a> </li>
+                                href="mailto:{{ $settings->site_email }}">
+                                {{ $settings->site_email }}</a> </li>
                     </ul>
                 </div>
             </div>

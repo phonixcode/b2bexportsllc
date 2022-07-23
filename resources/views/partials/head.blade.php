@@ -1,8 +1,12 @@
 <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('title') | Used Laptop wholesale Dealers in USA - IT Asset Services Destruction</title>
-    <link rel="shortcut icon" type="image/x-icon" href="front/img/favicon.ico">
+    <meta name="keywords" content="{{ $settings->meta_keywords }}" />
+	<meta name="author" content="{{ $settings->site_title }}" />
+	<meta name="description" content="{{ $settings->meta_description }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title') | {{ $settings->meta_description }}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ $settings->site_favicon }}">
     <!-- Bootstrap Min CSS -->
     <link rel="stylesheet" href="front/css/bootstrap.min.css">
     <!-- Owl Theme Default Min CSS -->

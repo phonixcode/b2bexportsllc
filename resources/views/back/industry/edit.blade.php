@@ -40,8 +40,8 @@
                                 <div class="mb-3">
                                     <label for="">Status</label>
                                     <select class="default-select form-control wide mb-3" name="status">
-                                        <option value="active" {{ $service->status == 'active' ? ' selected' : '' }}>Active</option>
-                                        <option value="disabled" {{ $service->status == 'disabled' ? ' selected' : '' }}>Disabled</option>
+                                        <option value="active" {{ $industry->status == 'active' ? ' selected' : '' }}>Active</option>
+                                        <option value="disabled" {{ $industry->status == 'disabled' ? ' selected' : '' }}>Disabled</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">

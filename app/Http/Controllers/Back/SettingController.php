@@ -2,19 +2,48 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Models\Blog;
+use App\Models\User;
+use App\Models\AboutUS;
 use App\Models\History;
 use App\Models\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
-use App\Models\AboutUS;
-use App\Models\Blog;
+use Illuminate\Support\Facades\Hash;
 
 class SettingController extends Controller
 {
     public function settings()
     {
         return view('back.settings', ['setting' => Settings::first()]);
+    }
+
+    public function profile()
+    {
+        return view('back.profile');
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
+
+        $user = User::find(auth()->id());
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
+
+        $status = $user->save();
+
+        return $status
+        ? redirect()->back()->with('success', 'Profile Updated!')
+        : redirect()->back()->with('error', 'Error, Updating profile try again later');
     }
 
     public function updateSettings(Request $request)

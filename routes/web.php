@@ -43,7 +43,9 @@ Route::prefix('admin')->group(function () {
         Route::resource('industries', IndustriesController::class);
 
         Route::get('settings', [SettingController::class, 'settings'])->name('settings');
+        Route::get('profile', [SettingController::class, 'profile'])->name('profile');
         Route::put('settings', [SettingController::class, 'updateSettings'])->name('settings.update');
+        Route::put('profile', [SettingController::class, 'updateProfile'])->name('profile.update');
         Route::put('history', [SettingController::class, 'updateHistory'])->name('history.update');
         Route::put('news', [SettingController::class, 'updateBlog'])->name('blog.update');
         Route::put('abt', [SettingController::class, 'updateAbt'])->name('abt.update');

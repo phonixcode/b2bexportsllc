@@ -6,6 +6,117 @@
     <div class="container-fluid">
         <!-- row -->
         <div class="row">
+            <div class="col-12">
+                @include('partials.alert')
+            </div>
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Site Settings</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="nav flex-column nav-pills mb-3">
+                                    <a href="#v-pills-home" data-bs-toggle="pill" class="nav-link active show">History</a>
+                                    <a href="#v-pills-profile" data-bs-toggle="pill" class="nav-link">Why Choose Us?</a>
+                                    <a href="#v-pills-messages" data-bs-toggle="pill" class="nav-link">News</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="tab-content">
+                                    <div id="v-pills-home" class="tab-pane fade active show">
+                                        <div class="basic-form">
+                                            <form action="{{ route('history.update') }}" method="post" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('put')
+
+                                                <div class="mb-3">
+                                                    <label for="">Happy Clients</label>
+                                                    <input type="number" class="form-control input-default"  name="happy_clients" value="{{ $history->happy_clients }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="">Completed Works</label>
+                                                    <input type="number" class="form-control input-default"  name="completed_works" value="{{ $history->completed_works }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="">Winning Awards</label>
+                                                    <input type="number" class="form-control input-default"  name="winning_awards" value="{{ $history->winning_awards }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="">Completed Projects</label>
+                                                    <input type="number" class="form-control input-default"  name="completed_projects" value="{{ $history->completed_projects }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div id="v-pills-profile" class="tab-pane fade">
+                                        <div class="basic-form">
+                                            <form action="{{ route('abt.update') }}" method="post" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('put')
+
+                                                <div class="mb-3">
+                                                    <label for="">Title</label>
+                                                    <input type="text" class="form-control input-default"  name="title" value="{{ $abt->title }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="">Sub Title</label>
+                                                    <input type="text" class="form-control input-default"  name="sub_title" value="{{ $abt->sub_title }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="">Information</label>
+                                                    <textarea class="form-control" style="height: 150px;" rows="30" name="information" placeholder="">{{ $abt->information }}</textarea>
+                                                </div>
+                                                <div class="mb-3 d-none">
+                                                    <label for="">Background Image</label>
+                                                    <input type="hidden" class="form-control input-default"  name="image" value="">
+                                                    {{-- <img src="{{ $abt->image }}" alt="image" width="50"> --}}
+                                                </div>
+                                                <div class="mb-3">
+                                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div id="v-pills-messages" class="tab-pane fade">
+                                        <div class="basic-form">
+                                            <form action="{{ route('blog.update') }}" method="post" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('put')
+
+                                                <div class="mb-3">
+                                                    <label for="">Title</label>
+                                                    <input type="text" class="form-control input-default"  name="title" value="{{ $blog->title }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="">Sub Title</label>
+                                                    <input type="text" class="form-control input-default"  name="sub_title" value="{{ $blog->sub_title }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="">Information</label>
+                                                    <textarea class="form-control" style="height: 150px;" rows="30" name="information" placeholder="">{{ $blog->information }}</textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="">Image</label>
+                                                    <input type="file" class="form-control input-default"  name="image" value="">
+                                                    <img src="{{ $blog->image }}" alt="image" width="50" />
+                                                </div>
+                                                <div class="mb-3">
+                                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xl-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
@@ -16,7 +127,7 @@
                             <form action="{{ route('settings.update') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
-                                @include('partials.alert')
+                                {{-- @include('partials.alert') --}}
                                 <div class="mb-3">
                                     <label for="">Site Title</label>
                                     <input type="text" class="form-control input-default"  name="site_title" value="{{ $setting->site_title }}">

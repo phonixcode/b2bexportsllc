@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Models\History;
 use App\Models\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
+use App\Models\AboutUS;
+use App\Models\Blog;
 
 class SettingController extends Controller
 {
@@ -39,6 +42,74 @@ class SettingController extends Controller
         return $settings
             ? back()->with('success', 'Setting successfully updated')
             : back()->with('error', 'Something went wrong!');
+    }
+
+    public function updateHistory(Request $request)
+    {
+        $history = History::first()->update([
+            'happy_clients' => $request->happy_clients,
+            'completed_works' => $request->completed_works,
+            'winning_awards' => $request->winning_awards,
+            'completed_projects' => $request->completed_projects
+        ]);
+
+        return $history
+        ? back()->with('success', 'History successfully updated')
+        : back()->with('error', 'Something went wrong!');
+    }
+
+    public function updateBlog(Request $request)
+    {
+        $blog = Blog::first();
+
+        if ($image = $request->file('image')) {
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move('media/site-image/', $imageName);
+            $blog_image = URL::to('/') . '/media/site-image/' . $imageName;
+
+            $this->unlinkImage($blog['image']);
+        } else {
+            $blog_image = $blog['image'];
+        }
+
+
+        $blog->update([
+            'title' => $request->title,
+            'sub_title' => $request->sub_title,
+            'information' => $request->information,
+            'image' => $blog_image
+        ]);
+
+        return $blog
+        ? back()->with('success', 'News successfully updated')
+        : back()->with('error', 'Something went wrong!');
+    }
+
+    public function updateAbt(Request $request)
+    {
+        $abt = AboutUS::first();
+
+        if ($image = $request->file('image')) {
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move('media/site-image/', $imageName);
+            $abt_image = URL::to('/') . '/media/site-image/' . $imageName;
+
+            $this->unlinkImage($abt['image']);
+        } else {
+            $abt_image = $abt['image'];
+        }
+
+
+        $abt->update([
+            'title' => $request->title,
+            'sub_title' => $request->sub_title,
+            'information' => $request->information,
+            'image' => $abt_image
+        ]);
+
+        return $abt
+        ? back()->with('success', 'abt successfully updated')
+        : back()->with('error', 'Something went wrong!');
     }
 
     private function update(Request $request)
@@ -90,10 +161,10 @@ class SettingController extends Controller
     private static function unlinkImage($fileName)
     {
         $imagePath ='media/site-image/';
-        $imageName = substr($fileName, strrpos($fileName, '/' )+1);
+        $imageName = substr($fileName, strrpos($fileName, '/')+1);
         $old_image = $imagePath.$imageName;
 
-        if(file_exists($old_image)){
+        if (file_exists($old_image)) {
             @unlink($old_image);
         }
     }

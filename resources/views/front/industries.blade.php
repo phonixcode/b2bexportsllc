@@ -16,7 +16,7 @@
     </div>
 </div>
 <!-- End Page Title Area -->
-
+@if (count($industries) != 0)
 <section class="service-details-area product-area pt-70 pb-70">
     <div class="container">
         <div class="row">
@@ -37,5 +37,5 @@
         </div>
     </div>
 </section>
-
+@endif
 @endsection

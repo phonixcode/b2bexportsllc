@@ -44,6 +44,9 @@ Route::prefix('admin')->group(function () {
 
         Route::get('settings', [SettingController::class, 'settings'])->name('settings');
         Route::put('settings', [SettingController::class, 'updateSettings'])->name('settings.update');
+        Route::put('history', [SettingController::class, 'updateHistory'])->name('history.update');
+        Route::put('news', [SettingController::class, 'updateBlog'])->name('blog.update');
+        Route::put('abt', [SettingController::class, 'updateAbt'])->name('abt.update');
         Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     });
 });

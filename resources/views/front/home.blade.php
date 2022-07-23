@@ -102,28 +102,15 @@
         <div class="row">
             <div class="col-lg-7 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
                 <div class="computer-content">
-                    <h6>Rrefurbished Laptops</h6>
-                    <h2>What Makes Refurbished Laptops a Value for money Deal?</h2>
-                    <p>Technology is growing and so does our dependency on it. It has grown to be a necessity of
-                        this age. The
-                        market is flooded with machines and gadgets flaunting latest technology. However, there is a
-                        gap between
-                        ‘I can buy it and I Should buy it’. It is this gap that controls the buying behavior of an
-                        individual.</p>
-                    <p>They say “necessity is the mother of invention”. It was this necessity that a whole new
-                        industry
-                        developed providing refurbished machines.</p>
-                    <p>By 2031, the global market for refurbished laptops and computers would reach eight billion
-                        USD, according
-                        to the Refurbished Computer and Laptop Market report of 2021-2031 from Transparency Market
-                        Research. It is
-                        growing at a whopping 11% CAGR.</p>
+                    <h6>{{ $blog->title }}</h6>
+                    <h2>{{ $blog->sub_title }}</h2>
+                    <p>{!! $blog->information !!}</p>
                     <!-- <p>Globally individuals and organizations are showing interest in refurbished machines. Big Brands are introducing refurbished machines in their IT Departments. Companies providing refurbished devices are closing massive deals. B2B Exports being one such company has partnered with numerous MNCs and small organizations. </p> -->
                 </div>
             </div>
             <div class="col-lg-5 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
                 <div class="">
-                    <div class="about-img-2"> <img src="front/img/wh.jpg"> </div>
+                    <div class="about-img-2"> <img src="{{ $blog->image }}"> </div>
                 </div>
             </div>
         </div>
@@ -136,25 +123,25 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-counter"> <i class="flaticon-smile"></i>
-                    <h2> <span class="odometer" data-count="2000">00</span> <span class="target">+</span> </h2>
+                    <h2> <span class="odometer" data-count="{{ $history->happy_clients }}">00</span> <span class="target">+</span> </h2>
                     <p>Happy Clients</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-counter"> <i class="flaticon-team"></i>
-                    <h2> <span class="odometer" data-count="100">00</span> <span class="target">+</span> </h2>
+                    <h2> <span class="odometer" data-count="{{ $history->completed_works }}">00</span> <span class="target">+</span> </h2>
                     <p>Completed Works</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-counter"> <i class="flaticon-trophy"></i>
-                    <h2> <span class="odometer" data-count="50">00</span> <span class="traget">+</span> </h2>
+                    <h2> <span class="odometer" data-count="{{ $history->winning_awards }}">00</span> <span class="traget">+</span> </h2>
                     <p>Winning Awards</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-counter"> <i class="flaticon-file"></i>
-                    <h2> <span class="odometer" data-count="305">00</span> <span class="target">+</span> </h2>
+                    <h2> <span class="odometer" data-count="{{ $history->completed_projects }}">00</span> <span class="target">+</span> </h2>
                     <p>Completed Projects</p>
                 </div>
             </div>
@@ -176,15 +163,9 @@
                 <div class="why-us-choose-wrap pt-70 pb-70 wow fadeInRight"
                     style="visibility: visible; animation-name: fadeInRight;">
                     <div class="section-title">
-                        <h6>Electeronic Recycling</h6>
-                        <h2>How can an IT Department Reduce Costs?</h2>
-                        <p>Want to gain better profits? Want to be among top businesses? Want to gain a bigger
-                            market share? Guess
-                            what? we are talking money..! Something we have been working hard on ..! Profit, cost,
-                            and revenue are
-                            beautiful relations. Of Late, business consultants across the world, have stressed the
-                            importance of
-                            controlling cost. Saving on […]</p>
+                        <h6>{{ $abt->title }}</h6>
+                        <h2>{{ $abt->sub_title }}</h2>
+                        <p>{!! $abt->information !!}</p>
                     </div>
                 </div>
             </div>

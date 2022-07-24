@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Contact;
 use App\Models\Service;
 use App\Models\Facility;
 use App\Models\Industry;
@@ -33,6 +34,15 @@ class IndexController extends Controller
     public function contact_us()
     {
         return view('front.contact-us');
+    }
+
+    public function contact_submit(Request $request)
+    {
+        $data = $request->all();
+
+        return Contact::create($data)
+            ? back()->with('success', 'Enquiry Sent Successfully')
+            : back()->with('error', 'Something went wrong!, please try again later');
     }
 
     public function viewPage($page_slug)

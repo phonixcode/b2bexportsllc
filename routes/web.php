@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Back\AuthController;
 use App\Http\Controllers\Back\BannerController;
+use App\Http\Controllers\Back\ContactController;
 use App\Http\Controllers\Back\ServiceController;
 use App\Http\Controllers\Back\SettingController;
 use App\Http\Controllers\Back\FacilityController;
@@ -24,6 +25,7 @@ Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('about-us', [IndexController::class, 'about_us'])->name('about-us');
 Route::get('industries', [IndexController::class, 'industries'])->name('industries');
 Route::get('contact-us', [IndexController::class, 'contact_us'])->name('contact');
+Route::post('contact-us', [IndexController::class, 'contact_submit'])->name('contact.submit');
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['guest', 'prevent.back.history'])->group(function () {
@@ -41,6 +43,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('services', ServiceController::class);
         Route::resource('facilities', FacilityController::class);
         Route::resource('industries', IndustriesController::class);
+        Route::resource('notifications', ContactController::class);
 
         Route::get('settings', [SettingController::class, 'settings'])->name('settings');
         Route::get('profile', [SettingController::class, 'profile'])->name('profile');

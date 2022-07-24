@@ -21,7 +21,9 @@
                         <div class="section-title">
                             <h2>Let’s Connect</h2>
                         </div>
-                        <form id="contactForm" novalidate>
+                        <form novalidate action="{{ route('contact.submit') }}" method="post">
+                            @csrf
+                            @include('partials.alert')
                             <div class="row">
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="col-lg-12 col-sm-12">
@@ -49,7 +51,7 @@
                                     </div>
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="form-group">
-                                            <input type="text" name="msg_subject" id="msg_subject"
+                                            <input type="text" name="subject" id="msg_subject"
                                                 class="form-control" required data-error="Please enter your subject"
                                                 placeholder="Your Subject">
                                             <div class="help-block with-errors"></div>

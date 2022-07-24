@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Sub Title</label>
-                                    <textarea class="form-control" rows="30" id="sub-title" name="sub_title" placeholder="">{{ $industry->summary }}</textarea>
+                                    <textarea class="form-control" rows="30" id="sub-title" name="sub_title" placeholder="">{{ $industry->sub_title }}</textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Image</label>
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Description</label>
-                                    <textarea class="form-control" rows="30" id="" name="information" placeholder="">{{ $industry->description }}</textarea>
+                                    <textarea class="form-control" style="height: 150px;" rows="30" id="" name="information" placeholder="">{{ $industry->information }}</textarea>
                                 </div>
 
                                 <div class="mb-3">
